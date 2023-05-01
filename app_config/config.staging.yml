@@ -1,0 +1,57 @@
+search_platform_api:
+  host: https://search-platform-api-stg.flippback.com
+  max_related_items: 50
+  time_out: 5
+  max_retries: 1
+max_multi_search_queries: 10
+item_rule_retriever:
+  base_url: https://item-rules-api-stg.flippback.com
+  refresh_interval: 15
+merchant_label_retriever:
+  bucket: item-rule-creator
+  filename: stg/merchant_labels/current.json
+  rule_sync_interval: 15
+favourites_dynamo_db_table: staging_flipp_accounts_favorites
+search_app_config:
+  mix_flyer_and_econ_terms:
+    - air fryer
+    - airpods
+    - apple watch
+    - christmas lights
+    - christmas tree
+    - chromebook
+    - dyson
+    - fitbit
+    - instant pot
+    - ipad
+    - iphone
+    - laptop
+    - nest
+    - ninja air fryer
+    - nintendo switch
+    - playstation
+    - printer
+    - tablet
+    - tv
+    - vacuum
+  event_searches:
+    easter:
+      fmall_resources_canada: 110
+      fmall_resources_usa: 111
+    halloween:
+      fmall_resources_canada: 93
+      fmall_resources_usa: 94
+    black friday:
+      fmall_resources_canada: 80
+      fmall_resources_usa: 79
+    christmas:
+      fmall_resources_canada: 101
+      fmall_resources_usa: 102
+    boxing day:
+      fmall_resources_canada: 84
+ecom_module_config:
+  uri: s3://f.wishabi.ca/maestro/staging/ecom_module_config.json
+  config_sync_interval: 5
+  base_url: https://storefront-payload-stg.flippback.com/storefronts
+  max_ecom_items_per_page: 3
+merchants_force_show_item_details: 2596
