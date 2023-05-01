@@ -3,6 +3,7 @@ module config/poc
 go 1.20
 
 require (
+	github.com/imdario/mergo v0.3.15
 	github.com/rs/zerolog v1.29.1
 	github.com/spf13/viper v1.15.0
 )

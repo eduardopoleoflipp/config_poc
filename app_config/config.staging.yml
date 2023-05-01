@@ -3,15 +3,20 @@ search_platform_api:
   max_related_items: 50
   time_out: 5
   max_retries: 1
+favourites_dynamo_db_table: staging_flipp_accounts_favorites
 max_multi_search_queries: 10
 item_rule_retriever:
   base_url: https://item-rules-api-stg.flippback.com
   refresh_interval: 15
+ecom_module_config:
+  uri: s3://f.wishabi.ca/maestro/staging/ecom_module_config.json
+  base_url: https://storefront-payload-stg.flippback.com/storefronts
+  config_sync_interval: 5
+  max_ecom_items_per_page: 3
 merchant_label_retriever:
   bucket: item-rule-creator
   filename: stg/merchant_labels/current.json
   rule_sync_interval: 15
-favourites_dynamo_db_table: staging_flipp_accounts_favorites
 search_app_config:
   mix_flyer_and_econ_terms:
     - air fryer
@@ -49,9 +54,11 @@ search_app_config:
       fmall_resources_usa: 102
     boxing day:
       fmall_resources_canada: 84
-ecom_module_config:
-  uri: s3://f.wishabi.ca/maestro/staging/ecom_module_config.json
-  config_sync_interval: 5
-  base_url: https://storefront-payload-stg.flippback.com/storefronts
-  max_ecom_items_per_page: 3
 merchants_force_show_item_details: 2596
+merchant_location:
+  table: staging_merchants_fsas
+  national_min_fsas_us: 12000
+  national_min_fsas_ca: 500
+app_ads_config:
+  host:    https://app-ads-stg.flippback.com
+  timeout: 3500

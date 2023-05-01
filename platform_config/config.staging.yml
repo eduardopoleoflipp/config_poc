@@ -1,0 +1,8 @@
+multi_query_search_request:
+  search_query_result_limit: 100
+  search_query_spell_check: true
+  search_query_re_host: https://flipp-search-stg.flippback.com
+watch_list_request_config:
+  host: https://watchlist-stg.flippback.com
+auction_house_request_config:
+  host: https://auction-house.flippback.com

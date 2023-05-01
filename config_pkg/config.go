@@ -1,7 +1,7 @@
 package config_pkg
 
 /*
-	Copied from
+	Package that does the heavy lifting to unmarshall configs
 	https://github.com/wishabi/pkg/blob/main/config/loader.go
 	for convience to show case the POC
 */
@@ -10,7 +10,6 @@ import (
 	"os"
 	"strings"
 
-	"github.com/rs/zerolog/log"
 	"github.com/spf13/viper"
 )
 
@@ -64,16 +63,6 @@ func Loader(configPath string, ptr interface{}) error {
 	}
 
 	viper.SetConfigName(filePattern)
-
-	log.
-		Debug().
-		Str("environment", os.Getenv("ENVIRONMENT")).
-		Str("file_pattern", filePattern).
-		Msg("loading configuration file based on env variable")
-
-	viper.SetEnvPrefix("FLIPP")
-	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
-	viper.AutomaticEnv()
 
 	if configPath == "" {
 		err = viper.ReadConfig(strings.NewReader("{}"))
